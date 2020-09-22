@@ -384,11 +384,13 @@ class Random implements java.io.Serializable {
      * @since 1.2
      */
     public int nextInt(int bound) {
+        //参数检查
         if (bound <= 0)
             throw new IllegalArgumentException(BadBound);
-
+        //根据老的种子生成新的种子，通过设置原子变量保证多线程下种子的数据唯一，但牺牲的是性能（原子变量的更新时CAS操作）
         int r = next(31);
         int m = bound - 1;
+        //根据新的种子计算随机数 这个算法是固定的，因此传入的种子相同，所得结果也是相同的
         if ((bound & m) == 0)  // i.e., bound is a power of 2
             r = (int)((bound * (long)r) >> 31);
         else {
