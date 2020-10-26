@@ -1,4 +1,4 @@
-package test.designmodel.proxy.demo;
+package test.designmodel.proxy.staticproxy.demo;
 
 /**
  * @Author: Zhangdongdong

@@ -1,4 +1,6 @@
-package test.designmodel.proxy.demo;
+package test.designmodel.proxy.dynamicproxy.jdcproxy;
+
+import test.designmodel.proxy.staticproxy.demo.Person;
 
 /**
  * @Author: Zhangdongdong
