@@ -15,6 +15,10 @@ public class Test {
 
         Person instance = proxy.getInstance(new Male());
 
-//        instance.findLove();
+        instance.findLove();
+
+        DynamicProxy dynamicProxy = new DynamicProxy();
+        Person person = (Person) dynamicProxy.getInstance(new Male());
+        person.findLove();
     }
 }
