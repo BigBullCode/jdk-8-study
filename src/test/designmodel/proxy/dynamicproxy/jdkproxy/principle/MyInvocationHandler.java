@@ -1,4 +1,4 @@
-package test.designmodel.proxy.dynamicproxy.jdcproxy.principle;
+package test.designmodel.proxy.dynamicproxy.jdkproxy.principle;
 
 import java.lang.reflect.Method;
 

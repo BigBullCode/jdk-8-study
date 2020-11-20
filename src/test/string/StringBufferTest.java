@@ -10,6 +10,14 @@ public class StringBufferTest {
         StringBuffer sb = new StringBuffer();
         sb.append("asdfas").append("\n\r").append("bbbb");
         System.out.println(sb);
+        
+        getStr(sb.toString(), sb.toString());
 
     }
+
+    private static void getStr(String... str) {
+        System.out.println(str[1]);
+    }
+
+
 }

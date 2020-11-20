@@ -60,7 +60,7 @@ import java.lang.annotation.*;
  * @jls 4.3.2. The Class Object
  * @jls 9.8 Functional Interfaces
  * @jls 9.4.3 Interface Method Body
- * @since 1.8
+ * @since 1.8 该接口表示接口为一个函数式接口，内部只包含一个抽象方法
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

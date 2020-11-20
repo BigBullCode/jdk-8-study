@@ -1,4 +1,4 @@
-package test.designmodel.proxy.cglibproxy;
+package test.designmodel.proxy.dynamicproxy.cglibproxy;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
@@ -22,6 +22,18 @@ public class CgligAgent implements MethodInterceptor {
 
     @Override
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-        return methodProxy.invokeSuper(o, objects);
+
+        before();
+        Object o1 = methodProxy.invokeSuper(o, objects);
+        after();
+        return o1;
+    }
+
+    private void after() {
+        System.out.println("end");
+    }
+
+    private void before() {
+        System.out.println("start");
     }
 }

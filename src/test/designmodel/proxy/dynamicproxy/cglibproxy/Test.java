@@ -1,7 +1,6 @@
-package test.designmodel.proxy.cglibproxy;
+package test.designmodel.proxy.dynamicproxy.cglibproxy;
 
-import sun.management.resources.agent;
-import test.designmodel.proxy.dynamicproxy.jdcproxy.Male;
+import test.designmodel.proxy.dynamicproxy.jdkproxy.Male;
 
 /**
  * @Author: Zhangdongdong
@@ -10,6 +9,8 @@ import test.designmodel.proxy.dynamicproxy.jdcproxy.Male;
 public class Test {
 
     public static void main(String[] args) {
+
+        //cglib动态代理
         Male male = (Male) new CgligAgent().getInstance(Male.class);
         male.findLove();
     }

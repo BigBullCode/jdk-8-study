@@ -1,6 +1,4 @@
-package test.designmodel.proxy.dynamicproxy.jdcproxy;
-
-import test.designmodel.proxy.staticproxy.demo.Person;
+package test.designmodel.proxy.dynamicproxy.jdkproxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

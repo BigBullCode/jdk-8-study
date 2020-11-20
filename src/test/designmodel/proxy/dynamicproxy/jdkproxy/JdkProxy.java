@@ -1,4 +1,4 @@
-package test.designmodel.proxy.dynamicproxy.jdcproxy;
+package test.designmodel.proxy.dynamicproxy.jdkproxy;
 
 import test.designmodel.proxy.staticproxy.demo.Person;
 

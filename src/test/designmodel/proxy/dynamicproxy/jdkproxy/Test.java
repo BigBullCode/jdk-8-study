@@ -1,8 +1,6 @@
-package test.designmodel.proxy.dynamicproxy.jdcproxy;
+package test.designmodel.proxy.dynamicproxy.jdkproxy;
 
 import test.designmodel.proxy.staticproxy.demo.Person;
-
-import java.lang.reflect.Method;
 
 /**
  * @Author: Zhangdongdong
@@ -11,12 +9,15 @@ import java.lang.reflect.Method;
 public class Test {
 
     public static void main(String[] args) throws Throwable {
+
+        // jdk动态代理1
         JdkProxy proxy = new JdkProxy();
 
         Person instance = proxy.getInstance(new Male());
 
         instance.findLove();
 
+        // jdk动态代理2
         DynamicProxy dynamicProxy = new DynamicProxy();
         Person person = (Person) dynamicProxy.getInstance(new Male());
         person.findLove();
