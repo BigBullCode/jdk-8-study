@@ -86,7 +86,7 @@ public class LambdaTest {
 
 
     /**
-     * 将苹果的所有属性条件统一起来
+     * 3.将苹果的所有属性条件统一起来
      *
      * @param inventory
      * @param color
@@ -108,7 +108,7 @@ public class LambdaTest {
 
 
     /**
-     * 5 ： 根据抽象条件进行筛选-传递代码/行为； 这种方式将filterApples方法的行为参数化了
+     * 4 ： 根据抽象条件进行筛选-传递代码/行为； 这种方式将filterApples方法的行为参数化了
      * 只需要将第四步中不同的筛选策略传入该方法即可-策略模式
      *
      * 不同的行为需要不同的策略对象，会显得代码臃肿
@@ -129,7 +129,7 @@ public class LambdaTest {
 
     List<Apple> inventory = new ArrayList<>();
     /**
-     * 6 ： 通过匿名类，直接内联参数化filterApples方法的行为
+     * 5 ： 通过匿名类，直接内联参数化filterApples方法的行为
      *
      * 但是匿名类很笨重，占用很多空间
      */
@@ -140,14 +140,14 @@ public class LambdaTest {
     });
 
     /*
-   7 ： Lambda表达式
+   6 ： Lambda表达式
     但是目前的ApplePredicate只适用于Apple，需要扩展
      */
     List<Apple> result =
             filterApples(inventory, (Apple apple) -> "red".equals(apple.getColor()));
 
     /**
-     * 8： MyPredicate的产品类型抽象化，不再局限于Apple，这里的List类型抽象化
+     * 7： MyPredicate的产品类型抽象化，不再局限于Apple，这里的List类型抽象化
      * @param list
      * @param p
      * @param <T>

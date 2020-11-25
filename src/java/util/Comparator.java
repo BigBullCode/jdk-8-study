@@ -150,7 +150,7 @@ public interface Comparator<T> {
     int compare(T o1, T o2);
 
     /**
-     * Indicates whether some other object is &quot;equal to&quot; this
+     * 0 whether some other object is &quot;equal to&quot; this
      * comparator.  This method must obey the general contract of
      * {@link Object#equals(Object)}.  Additionally, this method can return
      * <tt>true</tt> <i>only</i> if the specified object is also a comparator
