@@ -666,6 +666,7 @@ public abstract class AbstractQueuedSynchronizer
      * Release action for shared mode -- signals successor and ensures
      * propagation. (Note: For exclusive mode, release just amounts
      * to calling unparkSuccessor of head if it needs signal.)
+     * 共享模式下的释放动作-信号后继并确保传播。 （注意：对于独占模式，如果需要信号，释放仅相当于调用head的unparkSuccessor。）
      */
     private void doReleaseShared() {
         /*
