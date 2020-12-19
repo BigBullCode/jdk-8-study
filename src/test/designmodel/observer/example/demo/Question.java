@@ -1,6 +1,7 @@
 package test.designmodel.observer.example.demo;
 /**
- * @Author: Zhangdongdong
+ * 事件源管理
+ * @Author:
  * @Date: 2020/12/15 15:39
  */
 public class Question {

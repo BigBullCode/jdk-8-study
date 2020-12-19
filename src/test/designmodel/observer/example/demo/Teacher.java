@@ -2,7 +2,8 @@ package test.designmodel.observer.example.demo;
 import java.util.Observable;
 import java.util.Observer;
 /**
- * @Author: Zhangdongdong
+ * 监听器
+ * @Author:
  * @Date: 2020/12/15 15:40
  */
 public class Teacher implements Observer {

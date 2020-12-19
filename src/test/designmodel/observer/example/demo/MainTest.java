@@ -1,6 +1,6 @@
 package test.designmodel.observer.example.demo;
 /**
- * @Author: Zhangdongdong
+ * @Author:
  * @Date: 2020/12/15 15:47
  */
 public class MainTest {

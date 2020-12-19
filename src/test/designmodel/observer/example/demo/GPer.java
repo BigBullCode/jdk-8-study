@@ -1,7 +1,8 @@
 package test.designmodel.observer.example.demo;
 import java.util.Observable;
 /**
- * @Author: Zhangdongdong
+ * 监听器管理
+ * @Author:
  * @Date: 2020/12/15 15:37
  */
 public class GPer extends Observable {

@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
  * 监听器的一种包装，标准事件源格式的定义
  *
  * 事件源管理
- * @Author: Zhangdongdong
+ * @Author:
  * @Date: 2020/12/15 16:06
  */
 public class Event {

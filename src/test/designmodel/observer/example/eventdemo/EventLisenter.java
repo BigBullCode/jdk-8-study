@@ -44,6 +44,7 @@ public class EventLisenter {
             if (event.getCallback() != null) {
                 //用反射调用它的回调函数
                 event.getCallback().invoke(event.getTarget(), event);
+                //也可以优化为策略模式组合，设置为不同的事件监听内执行各种回调函数
             }
         }
         catch (IllegalAccessException e) {
@@ -56,6 +57,7 @@ public class EventLisenter {
 
     protected void trigger(String trigger) {
         if (!this.events.containsKey(trigger)) {
+            System.out.println("事件" + trigger + "未注册");
             return;
         }
         trigger(this.events.get(trigger).setTrigger(trigger));
