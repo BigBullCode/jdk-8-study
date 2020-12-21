@@ -16,16 +16,21 @@ import java.util.TimerTask;
  */
 public class Main {
 
+    /**
+     * 白天用1000ms，下班用2000ms
+     */
+    private static int per = 2000;
+
     public static void main(String[] args) {
         Timer timer = new Timer();
-        timer.schedule(new MyTask(), 1000, 1000*500);
-        timer.schedule(new MyTask1(), 1000, 1000*360);
-        timer.schedule(new MyTask2(), 1000, 1000*700);
-        timer.schedule(new MyTask3(), 1000, 1000*380);
-        timer.schedule(new MyTask4(), 1000, 1000*450);
-        timer.schedule(new MyTask5(), 1000, 1000*400);
-        timer.schedule(new MyTask6(), 1000, 1000*600);
-        timer.schedule(new MyTask7(), 1000, 1000*300);
+        timer.schedule(new MyTask(), 1000, per*500);
+        timer.schedule(new MyTask1(), 1000, per*360);
+        timer.schedule(new MyTask2(), 1000, per*700);
+        timer.schedule(new MyTask3(), 1000, per*380);
+        timer.schedule(new MyTask4(), 1000, per*450);
+        timer.schedule(new MyTask5(), 1000, per*400);
+        timer.schedule(new MyTask6(), 1000, per*600);
+        timer.schedule(new MyTask7(), 1000, per*300);
 
     }
 }
