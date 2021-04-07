@@ -19,7 +19,7 @@ public class Main {
     /**
      * 白天用1000ms，下班用2000ms
      */
-    private static int per = 2000;
+    private static int per = 1000;
 
     public static void main(String[] args) {
         Timer timer = new Timer();

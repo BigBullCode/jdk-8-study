@@ -32,7 +32,7 @@ public class RegexMatches {
         // 现在创建 matcher 对象
         Matcher m = r.matcher(str);
 
-        if (m.find( )) {
+        if (m.find()) {
 //            System.out.println("Found value: " + m.group(0) );
 //            System.out.println("Found value: " + m.group(1) );
 //            System.out.println("Found value: " + m.group(2) );

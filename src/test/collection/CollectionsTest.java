@@ -1,5 +1,6 @@
 package test.collection;
 
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -32,5 +33,14 @@ public class CollectionsTest {
         Collections.sort(strList, Collections.reverseOrder());
 
         System.out.println("sort 排序：" + strList);
+
+        Person person = new Person();
+        person.setAge(3);
+        List<Person> ints = new ArrayList<>();
+        ints.add(person);
+        for (Person anInt : ints) {
+            anInt.setAge(5);
+        }
+        System.out.println(ints.get(0).toString());
     }
 }
