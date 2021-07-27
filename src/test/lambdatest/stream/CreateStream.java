@@ -1,4 +1,5 @@
 package test.lambdatest.stream;
+import com.sun.xml.internal.xsom.impl.scd.Iterators;
 import test.lambdatest.Apple;
 
 import java.util.ArrayList;
@@ -32,5 +33,10 @@ public class CreateStream {
         apple.setColor("blue");
         strs.add(apple);
         strs.stream().collect(groupingBy(Apple :: getColor));
+
+        List<String> list = new ArrayList();
+        list.addAll(Arrays.asList(new String[]{"我", "世界", "无敌"}));
+        String str = list.stream().collect(Collectors.joining(","));
+        System.out.println(str);
     }
 }

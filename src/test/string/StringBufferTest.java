@@ -13,6 +13,10 @@ public class StringBufferTest {
         
         getStr(sb.toString(), sb.toString());
 
+        sb.append("aaa").append(",");
+        String entitys = sb.substring(0, sb.lastIndexOf(","));
+        System.out.println(entitys);
+
     }
 
     private static void getStr(String... str) {

@@ -528,6 +528,7 @@ public final class Integer extends Number implements Comparable<Integer> {
      *             specified radix.
      * @exception  NumberFormatException if the {@code String}
      *             does not contain a parsable {@code int}.
+     *             radix表示前面的字符串是哪种进制数
      */
     public static int parseInt(String s, int radix)
                 throws NumberFormatException

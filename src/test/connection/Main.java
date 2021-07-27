@@ -50,6 +50,7 @@ class MyTask1 extends TimerTask {
                 "https://blog.csdn.net/like_java_/article/details/107379083",
                 "https://blog.csdn.net/like_java_/article/details/110136928",
                 "https://blog.csdn.net/like_java_/article/details/110127205",
+                "https://blog.csdn.net/like_java_/article/details/118490266?spm=1001.2014.3001.5501"
                 /*"https://blog.csdn.net/like_java_/article/details/108595119",
                 "https://blog.csdn.net/like_java_/article/details/108128022",
                 "https://blog.csdn.net/like_java_/article/details/108080693",
@@ -140,6 +141,7 @@ class MyTask2 extends TimerTask {
                 "https://blog.csdn.net/like_java_/article/details/108073418",
                 "https://blog.csdn.net/like_java_/article/details/108072454",
                 "https://blog.csdn.net/like_java_/article/details/107855233",
+                "https://blog.csdn.net/like_java_/article/details/113249898?spm=1001.2014.3001.5501"
                /* "https://blog.csdn.net/like_java_/article/details/107792533",
                 "https://blog.csdn.net/like_java_/article/details/107789023",
                 "https://blog.csdn.net/like_java_/article/details/107788903",

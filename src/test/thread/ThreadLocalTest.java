@@ -19,8 +19,8 @@ public class ThreadLocalTest {
             @Override
             public void run() {
                 localVariable.set("线程1本地参数");
-                print("线程1");
-                System.out.println("线程1移除后" + localVariable.get());
+//                print("线程1");
+               System.out.println("线程1移除后" + localVariable.get());
             }
         });
 
@@ -28,13 +28,14 @@ public class ThreadLocalTest {
             @Override
             public void run() {
                 localVariable.set("线程2本地参数");
-                print("线程2");
-                System.out.println("线程2移除后" + localVariable.get());
+//                print("线程2");
+//                System.out.println("线程2移除后" + localVariable.get());
             }
         });
 
         threadOne.start();
         threadTwo.start();
+        print(localVariable.get());
     }
 
 }

@@ -5,8 +5,6 @@ package test.designmodel.observer.example.eventdemo;
  */
 public class EventMainTest {
 
-
-
     public static void main(String[] args) {
         MouseEventCallback callback = new MouseEventCallback();
 

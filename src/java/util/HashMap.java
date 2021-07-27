@@ -628,6 +628,8 @@ public class HashMap<K,V> extends AbstractMap<K,V>
         if ((tab = table) == null || (n = tab.length) == 0)
             n = (tab = resize()).length;
         if ((p = tab[i = (n - 1) & hash]) == null)
+            // 如果没有hash碰撞则直接插入元素，此时如果将多个线程同时进入到这里，
+            // 且hash值相同，则不再进行hash判断，直接覆盖其它线程的value，出现线程不安全。
             tab[i] = newNode(hash, key, value, null);
         else {
             Node<K,V> e; K k;
