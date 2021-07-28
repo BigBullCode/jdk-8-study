@@ -413,6 +413,7 @@ public final class Constructor<T> extends Executable {
                 checkAccess(caller, clazz, null, modifiers);
             }
         }
+        // 如果是枚举类型，直接抛异常，说明反射无法实例化枚举类！
         if ((clazz.getModifiers() & Modifier.ENUM) != 0)
             throw new IllegalArgumentException("Cannot reflectively create enum objects");
         ConstructorAccessor ca = constructorAccessor;   // read volatile

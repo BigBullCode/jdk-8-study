@@ -2007,6 +2007,7 @@ public class ObjectInputStream
         Class<?> cl = desc.forClass();
         if (cl != null) {
             try {
+                //如果是枚举类，只是通过枚举类的名字来查找对象，而不是新建对象
                 @SuppressWarnings("unchecked")
                 Enum<?> en = Enum.valueOf((Class)cl, name);
                 result = en;

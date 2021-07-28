@@ -6,10 +6,13 @@ public class EnumSingletonTest {
 
 	
 	public static void main(String[] args) {
-		
+
 		EnumSingleton instance = EnumSingleton.getInstance();
+		EnumSingleton instance1 = EnumSingleton.getInstance();
 		try {
 			instance.setData(new Object());
+			instance.setData(new Pojo());
+			instance.setData(new Pojo());
 			Class clazz = EnumSingleton.class;
 			Constructor c = clazz.getDeclaredConstructor(String.class, int.class);//由于Enum源码可知，Enum需有参构造
 			c.setAccessible(true);

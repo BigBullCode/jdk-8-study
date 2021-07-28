@@ -3,8 +3,16 @@ package test.designmodel.singleton.register;
 
 /**
  * 枚举式单例
- * 
+ * 避免反射破坏：
  * 无法通过反射创建枚举对象，因此，Enum从底层避免反射破坏单例
+ * Constructor.newInstance()源码中
+ *
+ * 保证线程安全：枚举类反编译后，可以看到单例枚举类是一个final类，且创建该对象实例是在一个static静态语句块儿中进行的
+ * 根据jvm的类加载机制，静态语句块儿只会在类被加载时执行一次，所以可以线程安全。因为它是final类，不能被继承，也就不能创建子类对象
+ *
+ *
+ *
+ *
  * @author Administrator
  *
  */
@@ -13,7 +21,6 @@ public enum EnumSingleton {
 	INSTANCE;
 
 	private Object data;
-
 
 	public Object getData() {
 		return data;
@@ -31,19 +38,6 @@ public enum EnumSingleton {
 		return INSTANCE;
 	}
 
-	/**
-	 * 防止序列化破坏单例
-	 * 1. 在通过序列化读取为对象时，用到了ObjectInputStream.readObject()方法
-	 * 2.readObject()方法内部调用了一个readObject0方法
-	 * 3.readObject0方法内有一个 checkResolve方法
-	 * 4.checkResolve内用一个readOrdinaryObject方法，内有个判断方法为：hasReadResolveMethod()，用于判断单例对象内部有没有resolve方法
-	 * 5.如果没有resolve方法，将会调用newInstance()方法，创建新的对象，破坏单例。
-	 * 6.如果有resolve方法，首先会去调用invokeReadResolve(obj)方法
-	 * 6.invokeReadResolve(obj)方法，通过反射机制，调用单例对象的resolve方法：readResolveMethod.invoke(obj,new Object[] null),得到对象并返回
-	 * 7.hasReadResolveMethod()方法在得到invokeReadResolve(obj)方法返回值后，赋值给单例对象。
-	 * 8.因此，如果在单例对象内有resolve()方法时，通过反序列化创建实例化对象时，始终是通过resolve方法获取的单例对象
-	 * @return
-	 */
-	private Object readResovle() {return INSTANCE;}
+
 
 }
