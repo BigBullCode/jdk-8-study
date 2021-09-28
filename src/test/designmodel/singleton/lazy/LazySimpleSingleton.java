@@ -70,7 +70,8 @@ public class LazySimpleSingleton {
 	 * 缺点：能够被反射破坏
 	 * 
 	 * 加载方式：1.加载classPath的class文件，
-	 * LazySimpleSingleton.class : 最先加载此文件，当加载到此方法时，需要用到内部类，才会去加载内部类的class文件，所以可以完美实现懒汉式单例的线程安全性能问题
+	 * LazySimpleSingleton.class : 最先加载此文件，当加载到此方法时，需要用到内部类，才会去加载内部类的class文件，
+	 * 所以可以完美实现懒汉式单例的线程安全性能问题
 	 * LazySimpleSingleton$LazyHolder.class :
 	 * @return
 	 */

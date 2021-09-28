@@ -1,6 +1,8 @@
 package test.designmodel.singleton.register;
 
-
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
+import com.sun.tools.javac.code.Attribute;
+import test.staticclass.Person;
 /**
  * 枚举式单例
  * 避免反射破坏：
@@ -18,7 +20,9 @@ package test.designmodel.singleton.register;
  */
 public enum EnumSingleton {
 
-	INSTANCE;
+	INSTANCE,
+	adfasd;
+	private Person person;
 
 	private Object data;
 
@@ -38,6 +42,8 @@ public enum EnumSingleton {
 		return INSTANCE;
 	}
 
-
+	private EnumSingleton() {
+		person = new Person();
+	}
 
 }

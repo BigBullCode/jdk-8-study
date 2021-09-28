@@ -1,5 +1,7 @@
 package test.designmodel.singleton.register;
 
+import com.sun.tools.javac.code.Attribute;
+
 import java.lang.reflect.Constructor;
 
 public class EnumSingletonTest {
@@ -7,7 +9,7 @@ public class EnumSingletonTest {
 	
 	public static void main(String[] args) {
 
-		EnumSingleton instance = EnumSingleton.getInstance();
+		/*EnumSingleton instance = EnumSingleton.getInstance();
 		EnumSingleton instance1 = EnumSingleton.getInstance();
 		try {
 			instance.setData(new Object());
@@ -21,6 +23,16 @@ public class EnumSingletonTest {
 			
 		} catch (Exception e) {
 			// TODO: handle exception
-		}
+		}*/
+
+		EnumSingleton.INSTANCE.setData("111");
+		System.out.println(EnumSingleton.INSTANCE.getData());
+		System.out.println(EnumSingleton.getInstance().getData());
+		EnumSingleton.getInstance().setData("aaa");
+		System.out.println(EnumSingleton.INSTANCE.getData());
+		System.out.println(EnumSingleton.getInstance().getData());
+		EnumSingleton.adfasd.setData("12312312");
+		System.out.println(EnumSingleton.INSTANCE.getData());
+		System.out.println(EnumSingleton.adfasd.getData());
 	}
 }

@@ -625,13 +625,13 @@ public class HashMap<K,V> extends AbstractMap<K,V>
     final V putVal(int hash, K key, V value, boolean onlyIfAbsent,
                    boolean evict) {
         Node<K,V>[] tab; Node<K,V> p; int n, i;
-        if ((tab = table) == null || (n = tab.length) == 0)
-            n = (tab = resize()).length;
+        if ((tab = table) == null || (n = tab.length) == 0) //首次初始化时table为null
+            n = (tab = resize()).length; //对hashMap进行扩容
         if ((p = tab[i = (n - 1) & hash]) == null)
             // 如果没有hash碰撞则直接插入元素，此时如果将多个线程同时进入到这里，
             // 且hash值相同，则不再进行hash判断，直接覆盖其它线程的value，出现线程不安全。
             tab[i] = newNode(hash, key, value, null);
-        else {
+        else { //存放位置有值表示出现hash碰撞
             Node<K,V> e; K k;
             if (p.hash == hash &&
                 ((k = p.key) == key || (key != null && key.equals(k))))

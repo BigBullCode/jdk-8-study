@@ -25,10 +25,10 @@ public class TwoBianryAdd {
         return Integer.toBinaryString(Integer.parseInt(a, 2) + Integer.parseInt(b, 2));
     }
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         System.out.println(addBinary1("1111101010101010101010100000000000000000000001010101", "00010101010110100000000010101010101010101011"));
         //            System.out.println(Integer.parseInt("1", 11));
-    }
+    }*/
 
     /**
      * @param a
@@ -53,6 +53,28 @@ public class TwoBianryAdd {
         ans.reverse();
 
         return ans.toString();
+    }
+
+    public static void main(String[] args) {
+        String a = "111";
+        String b = "0101";
+        StringBuffer sb = new StringBuffer();
+        int n = Math.max(a.length(), b.length());
+        int carry = 0;
+        for (int i = 1; i <= n; i++) {
+            carry += i <= a.length() ? (a.charAt(a.length() - i) - '0') : 0;
+            carry += i <= b.length() ? (b.charAt(b.length() - i) - '0') : 0;
+            int i1 = carry % 2 + 0;
+            sb.append(i1);
+//            sb.append((char)carry % 2 + '0');
+            carry /= 2;
+        }
+        if (carry > 0) {
+            sb.append('1');
+        }
+        sb.reverse();
+        System.out.println(sb.toString());
+
     }
 
 }
