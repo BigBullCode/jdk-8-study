@@ -1,0 +1,114 @@
+package test.algorithm.cp;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+/**
+ * @Author: Zhangdongdong
+ * @Date: 2021/12/22 10:51
+ */
+public class ZhongJiangTest {
+
+    public static void main(String[] args) {
+        List<Integer> targetList = new ArrayList<>();
+        targetList.addAll(Arrays.asList(new Integer[]{5,10,11,13,27,28,9}));
+
+        List<List<Integer>> list = new ArrayList<>();
+        try {
+            FileReader fr = new FileReader("F:\\testFile\\cp.txt");
+            BufferedReader bf = new BufferedReader(fr);
+            String str;
+            // 按行读取字符串
+            List<Integer> intList;
+            while ((str = bf.readLine()) != null) {
+                String intStr = str.substring(1, str.length() - 1);
+                String[] ints = intStr.replace(" ", "").trim().split(",");
+                intList = new ArrayList<>();
+                for (String anInt : ints) {
+                    intList.add(Integer.parseInt(anInt));
+                }
+                if (intList.size() != 7) {
+                    System.out.println("组合数量不正确：" + intList);
+                }
+                list.add(intList);
+            }
+            bf.close();
+            fr.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        System.out.println("组合数量：" + list.size());
+        List<List<Integer>> first = new ArrayList<>();
+        List<List<Integer>> two = new ArrayList<>();
+        List<List<Integer>> three = new ArrayList<>();
+        List<List<Integer>> four = new ArrayList<>();
+        List<List<Integer>> five = new ArrayList<>();
+        List<List<Integer>> six = new ArrayList<>();
+        for (List<Integer> ints : list) {
+            int red = 0;
+            int blue = ints.get(6);
+            int targetBule = targetList.get(6);
+            List<Integer> reds = ints.subList(0, 6);
+            List<Integer> targetReds = targetList.subList(0, 6);
+            reds.retainAll(targetReds);
+            if (reds.size() == 6) {
+                red = 6;
+            }
+            else if (reds.size() == 5) {
+                red = 5;
+            }
+            else if (reds.size() == 4) {
+                red = 4;
+            }
+            else if (reds.size() == 3) {
+                red = 3;
+            }
+            if (blue == targetBule) {
+                if (red == 6) { //6+1一等奖
+                    first.add(ints);
+                }
+                else if (red == 5) { //5+1 三等奖
+                    three.add(ints);
+                }
+                else if (red == 4) { //4+1 四等奖
+                    four.add(ints);
+                }
+                else if (red == 3) {
+                    five.add(ints);
+                }
+                else {
+                    six.add(ints);
+                }
+            }
+            else if (red == 6) { //6+0 二等奖
+                two.add(ints);
+            }
+            else if (red == 5) { //5+0 四等奖
+                four.add(ints);
+            }
+            else if (red == 4) {
+                five.add(ints);
+            }
+        }
+        int num1 = first.size() * 8000000;
+        int num2 = two.size() * 150000;
+        int num3 = three.size() * 3000;
+        int num4 = four.size() * 200;
+        int num5 = five.size() * 10;
+        int num6 = six.size() * 5;
+        int sum = num1 + num2 + num3 + num4 + num5 + num6;
+        System.out.println("一等奖中奖数量" + first.size() + "; 奖金约【" + num1 + "】元");
+        System.out.println("二等奖中奖数量" + two.size() + "; 奖金约【" + two.size() * 150000 + "】元");
+        System.out.println("三等奖中奖数量" + three.size() + "; 奖金约【" + three.size() * 3000 + "】元");
+        System.out.println("四等奖中奖数量" + four.size() + "; 奖金约【" + four.size() * 200 + "】元");
+        System.out.println("五等奖中奖数量" + five.size() + "; 奖金约【" + five.size() * 10 + "】元");
+        System.out.println("六等奖中奖数量" + six.size() + "; 奖金约【" + six.size() * 5 + "】元");
+        int money = sum - list.size() * 2;
+        System.out.println("总需购买注数为：" + list.size() +
+                ";总需投入金额为：" + list.size() * 2 + " 元；"
+                + "\n总中奖金额约为：" + sum + "元; \n净收益约为：" + money + "元（未计算特别奖）");
+    }
+
+}

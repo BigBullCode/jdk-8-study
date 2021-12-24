@@ -1,4 +1,5 @@
 package test.string;
+import java.security.PublicKey;
 import java.util.Arrays;
 import java.util.List;
 /**
@@ -8,10 +9,9 @@ import java.util.List;
 public class CharTest {
 
     public static void main(String[] args) {
-        String a = "nbc";
-        char c = a.charAt(0);
-        System.out.println(c);
-        String[] cs = {"m", "n"};
-        System.out.println(Arrays.asList(cs).contains(String.valueOf(c)));
+
+
+
+        System.out.println(Long.parseLong("null"));
     }
 }
