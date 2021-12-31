@@ -13,7 +13,8 @@ public class ZhongJiangTest {
 
     public static void main(String[] args) {
         List<Integer> targetList = new ArrayList<>();
-        targetList.addAll(Arrays.asList(new Integer[]{5,10,11,13,27,28,9}));
+//        targetList.addAll(Arrays.asList(new Integer[]{5,10,11,13,27,28,9}));
+        targetList.addAll(Arrays.asList(new Integer[]{9,14,20,21,24,26,4}));
 
         List<List<Integer>> list = new ArrayList<>();
         try {
@@ -100,11 +101,11 @@ public class ZhongJiangTest {
         int num6 = six.size() * 5;
         int sum = num1 + num2 + num3 + num4 + num5 + num6;
         System.out.println("一等奖中奖数量" + first.size() + "; 奖金约【" + num1 + "】元");
-        System.out.println("二等奖中奖数量" + two.size() + "; 奖金约【" + two.size() * 150000 + "】元");
-        System.out.println("三等奖中奖数量" + three.size() + "; 奖金约【" + three.size() * 3000 + "】元");
-        System.out.println("四等奖中奖数量" + four.size() + "; 奖金约【" + four.size() * 200 + "】元");
-        System.out.println("五等奖中奖数量" + five.size() + "; 奖金约【" + five.size() * 10 + "】元");
-        System.out.println("六等奖中奖数量" + six.size() + "; 奖金约【" + six.size() * 5 + "】元");
+        System.out.println("二等奖中奖数量" + two.size() + "; 奖金约【" + num2 + "】元");
+        System.out.println("三等奖中奖数量" + three.size() + "; 奖金约【" + num3 + "】元");
+        System.out.println("四等奖中奖数量" + four.size() + "; 奖金约【" + num4 + "】元");
+        System.out.println("五等奖中奖数量" + five.size() + "; 奖金约【" + num5 + "】元");
+        System.out.println("六等奖中奖数量" + six.size() + "; 奖金约【" + num6 + "】元");
         int money = sum - list.size() * 2;
         System.out.println("总需购买注数为：" + list.size() +
                 ";总需投入金额为：" + list.size() * 2 + " 元；"

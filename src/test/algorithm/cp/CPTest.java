@@ -24,7 +24,7 @@ public class CPTest {
 
     static final Integer conNum = 3; //连续数字个数
     static final Integer HIGH_RATE_RED = 1; //高频红球标准，出现2次以上
-    static final Integer LIKE = 4; //与最近号码相似度，匹配2个以上过滤
+    static final Integer LIKE = 3; //与最近号码相似度，匹配2个以上过滤
     static final Integer BLUE_RE = 3; //出现次数以上的蓝球过滤
     static Integer UP_BLUE; //出现次数以上的蓝球过滤
     static List<List<Integer>> lists = new LinkedList<>();
@@ -34,15 +34,17 @@ public class CPTest {
 
     static {
         Collections.addAll(lists
-                ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,11,13,27,28,9})) //2021-12-23
-                ,new ArrayList<>(Arrays.asList(new Integer[]{7,9,21,22,26,32,3})) //2021-12-21
+                ,new ArrayList<>(Arrays.asList(new Integer[]{9,14,20,21,24,26,4})) //2021-12-30  存在一等奖
+                ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,15,18,19,32,05})) //2021-12-28  无一等奖
+                ,new ArrayList<>(Arrays.asList(new Integer[]{10,12,15,17,19,20,8})) //2021-12-26  存在一等奖
+                ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,11,13,27,28,9})) //2021-12-23   存在一等奖
+                ,new ArrayList<>(Arrays.asList(new Integer[]{7,9,21,22,26,32,3})) //2021-12-21    存在一等奖
                 ,new ArrayList<>(Arrays.asList(new Integer[]{4,7,10,14,16,26,9}))
                 ,new ArrayList<>(Arrays.asList(new Integer[]{2, 5, 13, 15, 23, 26, 7}))
                 ,new ArrayList<>(Arrays.asList(new Integer[]{1, 9, 11, 13, 20, 29, 9}))
                 ,new ArrayList<>(Arrays.asList(new Integer[]{4,7,17,19,20,24,16}))
                 ,new ArrayList<>(Arrays.asList(new Integer[]{1,14,19,23,26,30,10}))
                 ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,16,26,27,33,1}))
-                ,new ArrayList<>(Arrays.asList(new Integer[]{12,14,19,23,24,27,1}))
                 ,new ArrayList<>(Arrays.asList(new Integer[]{12,14,19,23,24,27,1}))
                 ,new ArrayList<>(Arrays.asList(new Integer[]{11,14,15,16,27,32,9}))
                 ,new ArrayList<>(Arrays.asList(new Integer[]{3,7,10,14,21,24,1}))
@@ -52,8 +54,8 @@ public class CPTest {
                 ,new ArrayList<>(Arrays.asList(new Integer[]{1,3,12,19,27,31,10}))
                 ,new ArrayList<>(Arrays.asList(new Integer[]{1,4,6,14,20,28,8}))
                 ,new ArrayList<>(Arrays.asList(new Integer[]{8,11,18,19,20,24,1}))
-                ,new ArrayList<>(Arrays.asList(new Integer[]{8,9,15,24,26,30,6}))
-                ,new ArrayList<>(Arrays.asList(new Integer[]{4,15,21,27,28,29,10}))
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{8,9,15,24,26,30,6}))
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{4,15,21,27,28,29,10}))
 //                ,new ArrayList<>(Arrays.asList(new Integer[]{5,17,20,21,23,33,4}))
 //                ,Arrays.asList(new Integer[]{7,15,16,20,27,29,7})
                 );
@@ -180,7 +182,7 @@ public class CPTest {
             List<Integer> ints = lists.get(i);
             integers.addAll(ints);
             integers.retainAll(target);
-            if (integers.size() > LIKE) { //4个以上重复暂时忽略
+            if (integers.size() > LIKE) { //与历史存在较大重复则去掉
                 return true;
             }
         }
