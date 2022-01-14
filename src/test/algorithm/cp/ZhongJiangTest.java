@@ -14,33 +14,27 @@ public class ZhongJiangTest {
     public static void main(String[] args) {
         List<Integer> targetList = new ArrayList<>();
 //        targetList.addAll(Arrays.asList(new Integer[]{5,10,11,13,27,28,9}));
-        targetList.addAll(Arrays.asList(new Integer[]{9,14,20,21,24,26,4}));
+//        targetList.addAll(Arrays.asList(new Integer[]{9,14,20,21,24,26,4}));
+//        targetList.addAll(Arrays.asList(new Integer[]{6,13,15,17,20,21,3})); //20220102
+//        targetList.addAll(Arrays.asList(new Integer[]{2,12,21,23,25,31,8})); //20220104
+//        targetList.addAll(Arrays.asList(new Integer[]{2,5,16,17,18,30,6})); //20220106
+//        targetList.addAll(Arrays.asList(new Integer[]{5,19,24,28,30,32,14})); //20220109
+//        targetList.addAll(Arrays.asList(new Integer[]{7,10,12,16,19,31,16})); //202201011
+        targetList.addAll(Arrays.asList(new Integer[]{3,6,9,15,22,31,2})); //202201011
 
         List<List<Integer>> list = new ArrayList<>();
-        try {
-            FileReader fr = new FileReader("F:\\testFile\\cp.txt");
-            BufferedReader bf = new BufferedReader(fr);
-            String str;
-            // 按行读取字符串
-            List<Integer> intList;
-            while ((str = bf.readLine()) != null) {
-                String intStr = str.substring(1, str.length() - 1);
-                String[] ints = intStr.replace(" ", "").trim().split(",");
-                intList = new ArrayList<>();
-                for (String anInt : ints) {
-                    intList.add(Integer.parseInt(anInt));
-                }
-                if (intList.size() != 7) {
-                    System.out.println("组合数量不正确：" + intList);
-                }
-                list.add(intList);
-            }
-            bf.close();
-            fr.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String fileName = "F:\\testFile\\cp.txt";
+        getList(fileName, list);
+        getMoney(targetList, list);
 //        System.out.println("组合数量：" + list.size());
+
+        System.out.println("\n计算已购买彩票中奖情况========");
+        List<List<Integer>> choiceList = new ArrayList<>();
+        String choiceName = "F:\\testFile\\cp1.txt";
+        getList(choiceName, choiceList);
+        getMoney(targetList, choiceList);
+    }
+    private static void getMoney(List<Integer> targetList, List<List<Integer>> list) {
         List<List<Integer>> first = new ArrayList<>();
         List<List<Integer>> two = new ArrayList<>();
         List<List<Integer>> three = new ArrayList<>();
@@ -110,6 +104,31 @@ public class ZhongJiangTest {
         System.out.println("总需购买注数为：" + list.size() +
                 ";总需投入金额为：" + list.size() * 2 + " 元；"
                 + "\n总中奖金额约为：" + sum + "元; \n净收益约为：" + money + "元（未计算特别奖）");
+    }
+    private static void getList(String fileName, List<List<Integer>> list) {
+        try {
+            FileReader fr = new FileReader(fileName);
+            BufferedReader bf = new BufferedReader(fr);
+            String str;
+            // 按行读取字符串
+            List<Integer> intList;
+            while ((str = bf.readLine()) != null) {
+                String intStr = str.substring(1, str.length() - 1);
+                String[] ints = intStr.replace(" ", "").trim().split(",");
+                intList = new ArrayList<>();
+                for (String anInt : ints) {
+                    intList.add(Integer.parseInt(anInt));
+                }
+                if (intList.size() != 7) {
+                    System.out.println("组合数量不正确：" + intList);
+                }
+                list.add(intList);
+            }
+            bf.close();
+            fr.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

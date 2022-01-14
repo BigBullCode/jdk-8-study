@@ -31,11 +31,13 @@ public class Test{
         return strs;
     }
     public static void main(String[] args) {
-        String[][]a={{"1"},{"2"},{"3"},{"4"},{"5"}};
+        /*String[][]a={{"1"},{"2"},{"3"},{"4"},{"5"}};
         List<String>strs=getList(a);
         for(String s:strs){
             System.out.println(s);
         }
-        System.out.println("共有"+strs.size()+"个");
+        System.out.println("共有"+strs.size()+"个");*/
+        int random = (int)(Math.random() * 10);
+        System.out.println(random);
     }
 }
