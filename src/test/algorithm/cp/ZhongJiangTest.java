@@ -19,8 +19,9 @@ public class ZhongJiangTest {
 //        targetList.addAll(Arrays.asList(new Integer[]{2,12,21,23,25,31,8})); //20220104
 //        targetList.addAll(Arrays.asList(new Integer[]{2,5,16,17,18,30,6})); //20220106
 //        targetList.addAll(Arrays.asList(new Integer[]{5,19,24,28,30,32,14})); //20220109
-//        targetList.addAll(Arrays.asList(new Integer[]{7,10,12,16,19,31,16})); //202201011
-        targetList.addAll(Arrays.asList(new Integer[]{3,6,9,15,22,31,2})); //202201011
+//        targetList.addAll(Arrays.asList(new Integer[]{7,10,12,16,19,31,16})); //20220111
+//        targetList.addAll(Arrays.asList(new Integer[]{3,6,9,15,22,31,2})); //20220113
+        targetList.addAll(Arrays.asList(new Integer[]{1,20,22,23,25,28,16})); //20220116
 
         List<List<Integer>> list = new ArrayList<>();
         String fileName = "F:\\testFile\\cp.txt";

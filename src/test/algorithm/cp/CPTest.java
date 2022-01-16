@@ -114,7 +114,7 @@ public class CPTest {
         exportToFile(targets, filePath); //号码集合保存到本地
         System.out.println("随机选择15注:");
         List<List<Integer>> choiceNums = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 1; i++) {
             List<Integer> ints = targets.get((int) (Math.random() * targets.size()));
             choiceNums.add(ints);
         }
