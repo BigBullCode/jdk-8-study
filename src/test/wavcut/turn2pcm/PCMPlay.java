@@ -1,7 +1,7 @@
 /**   
  * @date 2018��1��17�� ����2:40:11 
  */
-package test.wavcut.turn;
+package test.wavcut.turn2pcm;
 
 import java.io.File;
 import java.io.FileInputStream;

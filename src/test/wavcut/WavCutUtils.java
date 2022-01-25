@@ -186,7 +186,31 @@ public class WavCutUtils {
         System.out.println("ChunkId=" + chunkId);
         return chunkId;
     }
-    
 
+    /**
+     * 测试wav文件根据时间剪切
+     * @param args
+     */
+    public static void main(String[] args) {
+        String fileName ="F:\\testFile\\abc.wav";
+        String targetName1 ="F:\\testFile\\aaa.wav";
+        String targetName2 ="F:\\testFile\\ccc.wav";
+        String targetName3 ="F:\\testFile\\fff.wav";
+
+        //        boolean result1 =  cut(fileName,targetName1,0,5);
+        //        boolean result3 = cut(fileName,targetName2,5,8);
+        boolean cut = false;
+        try {
+            cut = WavCutUtils.cut(fileName, targetName3, 0, 5);
+            WavCutUtils.cut(fileName, targetName1, 5, 10);
+            WavCutUtils.cut(fileName, targetName2, 10, 15);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        //        System.out.println(result1);
+        //        System.out.println(result3);
+        System.out.println(cut);
+    }
 
 }

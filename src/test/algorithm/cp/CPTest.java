@@ -4,9 +4,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -33,6 +36,10 @@ public class CPTest {
 
     static {
         Collections.addAll(lists
+                ,new ArrayList<>(Arrays.asList(new Integer[]{12,18,19,20,21,32,15})) //2022-1-20周日
+                ,new ArrayList<>(Arrays.asList(new Integer[]{4,5,17,19,25,28,16})) //2022-1-20周四   一等奖
+                ,new ArrayList<>(Arrays.asList(new Integer[]{2,3,7,9,20,21,13})) //2022-1-18周二
+                ,new ArrayList<>(Arrays.asList(new Integer[]{1,20,22,23,25,28,16})) //2022-1-18周日
                 ,new ArrayList<>(Arrays.asList(new Integer[]{3,6,9,15,22,31,2})) //2022-1-13周四
                 ,new ArrayList<>(Arrays.asList(new Integer[]{7,10,12,16,19,31,16})) //2022-1-11周二  一等奖
                 ,new ArrayList<>(Arrays.asList(new Integer[]{5,19,24,28,30,32,14})) //2022-1-9周日
@@ -49,10 +56,10 @@ public class CPTest {
                 ,new ArrayList<>(Arrays.asList(new Integer[]{1, 9, 11, 13, 20, 29, 9}))//12-14周二
                 ,new ArrayList<>(Arrays.asList(new Integer[]{4,7,17,19,20,24,16}))//12-12周日
                 ,new ArrayList<>(Arrays.asList(new Integer[]{1,14,19,23,26,30,10}))//12-09周四
-                ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,16,26,27,33,1}))//12-07周二
-                ,new ArrayList<>(Arrays.asList(new Integer[]{12,14,19,23,24,27,1}))//12-05周日
-                ,new ArrayList<>(Arrays.asList(new Integer[]{11,14,15,16,27,32,9}))//12-02周四
-                ,new ArrayList<>(Arrays.asList(new Integer[]{3,7,10,14,21,24,1}))//11-30周二
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,16,26,27,33,1}))//12-07周二
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{12,14,19,23,24,27,1}))//12-05周日
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{11,14,15,16,27,32,9}))//12-02周四
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{3,7,10,14,21,24,1}))//11-30周二
 //                ,new ArrayList<>(Arrays.asList(new Integer[]{2,6,9,15,19,28,16}))
 //                ,new ArrayList<>(Arrays.asList(new Integer[]{3,10,17,19,21,31,4}))
 //                ,new ArrayList<>(Arrays.asList(new Integer[]{1,2,16,19,25,31,8}))
@@ -110,15 +117,18 @@ public class CPTest {
         System.out.println("红球组合数量：" + reds.size());
         List<List<Integer>> targets = getTargetList(reds);
         System.out.println("红蓝球组合数量：" + targets.size());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd");
+
         String filePath = "F:\\testFile\\cp.txt";
         exportToFile(targets, filePath); //号码集合保存到本地
         System.out.println("随机选择15注:");
         List<List<Integer>> choiceNums = new ArrayList<>();
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 50; i++) {
             List<Integer> ints = targets.get((int) (Math.random() * targets.size()));
             choiceNums.add(ints);
         }
-        String choiceFilePath = "F:\\testFile\\cp1.txt";
+        String today = simpleDateFormat.format(new Date());
+        String choiceFilePath = "F:\\\\testFile\\\\cp-" + today + ".txt";
         exportToFile1(choiceNums, choiceFilePath);
         for (List<Integer> choiceNum : choiceNums) {
             Integer blue = choiceNum.get(6);
