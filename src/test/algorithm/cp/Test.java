@@ -1,8 +1,13 @@
 package test.algorithm.cp;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.stream.Stream;
 
 public class Test{
     public static List<String> getList(String[][]a){
@@ -37,7 +42,23 @@ public class Test{
             System.out.println(s);
         }
         System.out.println("共有"+strs.size()+"个");*/
-        int random = (int)(Math.random() * 10);
-        System.out.println(random);
+//        int random = (int)(Math.random() * 10);
+//        System.out.println(random);
+        /*List a = new ArrayList();
+        a.add(1);
+        a.add(2);
+        List b = new ArrayList();
+        b.add(1);
+        b.add(2);
+        a.removeAll(b);
+        System.out.println(a);
+        Long aaa = 123L;
+        String.valueOf(aaa + "");*/
+
+        Date date = new Date();
+        long time = date.getTime();
+        String s = String.valueOf(time);
+        Date date1 = new Date(Long.valueOf(s));
+        System.out.println(date1);
     }
 }

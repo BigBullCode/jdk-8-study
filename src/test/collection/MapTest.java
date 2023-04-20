@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 /**
  * @Author: Zhangdongdong
@@ -64,7 +65,7 @@ public class MapTest {
         for (Map.Entry<String, Integer> entry : map1.entrySet()){
             System.out.println("key: " + entry.getKey() + ", value: " + entry.getValue());
         }*/
-        List<String> list = new ArrayList<>();
+        /*List<String> list = new ArrayList<>();
         list.add("张三");
         list.add("李四");
         Map<String, List> map = new HashMap<>();
@@ -72,7 +73,23 @@ public class MapTest {
         System.out.println(map);
 
         map.get("姓名").add("王五");
-        System.out.println(map);
+        System.out.println(map);*/
 
+        /*boolean a = true;
+        boolean b = true;
+        a = !b;
+        System.out.println(a);*/
+
+        /*List<String> abc = new ArrayList<>();
+        abc.add("a");
+        abc.add("b");
+        abc.add("c");
+        Optional<String> any = abc.stream().filter(a -> "a".equals(a) || "b".equals(a)).findAny();
+        System.out.println(any.get());*/
+
+        Map map = new HashMap();
+        map.put("1", 123);
+        map.put("1", 12312);
+        System.out.println(map.get("1"));
     }
 }

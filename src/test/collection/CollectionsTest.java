@@ -4,6 +4,13 @@ import java.time.Period;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * @Author: Zhangdongdong
@@ -34,13 +41,44 @@ public class CollectionsTest {
 
         System.out.println("sort 排序：" + strList);
 
-        Person person = new Person();
-        person.setAge(3);
-        List<Person> ints = new ArrayList<>();
-        ints.add(person);
-        for (Person anInt : ints) {
+       /* List<Person> ints = new ArrayList<>();
+        Person person = null;
+        for (int i = 0; i < 4; i++) {
+            person = new Person();
+            person.setAge(3);
+            person.setName("张三");
+            ints.add(person);
+        }*/
+        FutureTask futureTask = new FutureTask(new Callable() {
+            @Override
+            public Object call() throws Exception {
+                System.out.println("asdfasdf");
+                return null;
+            }
+        });
+
+        /*for (Person anInt : ints) {
             anInt.setAge(5);
         }
-        System.out.println(ints.get(0).toString());
+        System.out.println(ints.get(0).toString());*/
     }
 }
+
+/*class person {
+    private String name;
+
+    private String alisa;
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getAlisa() {
+        return alisa;
+    }
+    public void setAlisa(String alisa) {
+        this.alisa = alisa;
+    }
+}*/

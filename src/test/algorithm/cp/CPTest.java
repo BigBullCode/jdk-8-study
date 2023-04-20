@@ -36,7 +36,19 @@ public class CPTest {
 
     static {
         Collections.addAll(lists
-                ,new ArrayList<>(Arrays.asList(new Integer[]{12,18,19,20,21,32,15})) //2022-1-20周日
+                ,new ArrayList<>(Arrays.asList(new Integer[]{6,19,24,25,28,32,4})) //
+                ,new ArrayList<>(Arrays.asList(new Integer[]{7,9,10,14,19,24,15})) //
+                ,new ArrayList<>(Arrays.asList(new Integer[]{1,7,11,15,17,19,6})) //
+                ,new ArrayList<>(Arrays.asList(new Integer[]{3,7,22,24,26,31,14})) //
+                ,new ArrayList<>(Arrays.asList(new Integer[]{9,11,14,22,30,32,1})) //
+                ,new ArrayList<>(Arrays.asList(new Integer[]{5,6,14,20,21,25,8})) //
+                ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,19,20,29,32,16})) //
+                ,new ArrayList<>(Arrays.asList(new Integer[]{6,14,16,27,28,31,7})) //
+                ,new ArrayList<>(Arrays.asList(new Integer[]{6,7,13,14,15,27,4})) //
+                ,new ArrayList<>(Arrays.asList(new Integer[]{2,3,4,7,10,18,15})) //
+                ,new ArrayList<>(Arrays.asList(new Integer[]{4,7,8,29,30,31,1})) //2022-1-27周四
+                ,new ArrayList<>(Arrays.asList(new Integer[]{6,15,23,24,25,33,15})) //2022-1-25周二
+                ,new ArrayList<>(Arrays.asList(new Integer[]{12,18,19,20,21,32,15})) //2022-1-23周日
                 ,new ArrayList<>(Arrays.asList(new Integer[]{4,5,17,19,25,28,16})) //2022-1-20周四   一等奖
                 ,new ArrayList<>(Arrays.asList(new Integer[]{2,3,7,9,20,21,13})) //2022-1-18周二
                 ,new ArrayList<>(Arrays.asList(new Integer[]{1,20,22,23,25,28,16})) //2022-1-18周日
@@ -44,18 +56,18 @@ public class CPTest {
                 ,new ArrayList<>(Arrays.asList(new Integer[]{7,10,12,16,19,31,16})) //2022-1-11周二  一等奖
                 ,new ArrayList<>(Arrays.asList(new Integer[]{5,19,24,28,30,32,14})) //2022-1-9周日
                 ,new ArrayList<>(Arrays.asList(new Integer[]{2,5,16,17,18,30,6})) //2022-1-6周四
-                ,new ArrayList<>(Arrays.asList(new Integer[]{2,12,21,23,25,31,8})) //2022-1-4周二
-                ,new ArrayList<>(Arrays.asList(new Integer[]{6,13,15,17,20,21,3})) //2022-1-2周日  一等奖
-                ,new ArrayList<>(Arrays.asList(new Integer[]{9,14,20,21,24,26,4})) //2021-12-30周四  一等奖
-                ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,15,18,19,32,5})) //2021-12-28周二
-                ,new ArrayList<>(Arrays.asList(new Integer[]{10,12,15,17,19,20,8})) //2021-12-26周日  一等奖
-                ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,11,13,27,28,9})) //2021-12-23周四   一等奖
-                ,new ArrayList<>(Arrays.asList(new Integer[]{7,9,21,22,26,32,3})) //2021-12-21周二    一等奖
-                ,new ArrayList<>(Arrays.asList(new Integer[]{4,7,10,14,16,26,9})) //12-19周日
-                ,new ArrayList<>(Arrays.asList(new Integer[]{2, 5, 13, 15, 23, 26, 7}))//12-16周四
-                ,new ArrayList<>(Arrays.asList(new Integer[]{1, 9, 11, 13, 20, 29, 9}))//12-14周二
-                ,new ArrayList<>(Arrays.asList(new Integer[]{4,7,17,19,20,24,16}))//12-12周日
-                ,new ArrayList<>(Arrays.asList(new Integer[]{1,14,19,23,26,30,10}))//12-09周四
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{2,12,21,23,25,31,8})) //2022-1-4周二
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{6,13,15,17,20,21,3})) //2022-1-2周日  一等奖
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{9,14,20,21,24,26,4})) //2021-12-30周四  一等奖
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,15,18,19,32,5})) //2021-12-28周二
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{10,12,15,17,19,20,8})) //2021-12-26周日  一等奖
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,11,13,27,28,9})) //2021-12-23周四   一等奖
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{7,9,21,22,26,32,3})) //2021-12-21周二    一等奖
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{4,7,10,14,16,26,9})) //12-19周日
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{2, 5, 13, 15, 23, 26, 7}))//12-16周四
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{1, 9, 11, 13, 20, 29, 9}))//12-14周二
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{4,7,17,19,20,24,16}))//12-12周日
+//                ,new ArrayList<>(Arrays.asList(new Integer[]{1,14,19,23,26,30,10}))//12-09周四
 //                ,new ArrayList<>(Arrays.asList(new Integer[]{5,10,16,26,27,33,1}))//12-07周二
 //                ,new ArrayList<>(Arrays.asList(new Integer[]{12,14,19,23,24,27,1}))//12-05周日
 //                ,new ArrayList<>(Arrays.asList(new Integer[]{11,14,15,16,27,32,9}))//12-02周四

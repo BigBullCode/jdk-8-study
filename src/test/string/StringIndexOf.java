@@ -1,6 +1,5 @@
 package test.string;
 import org.apache.commons.lang3.StringUtils;
-import test.collection.Person;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +45,7 @@ public class StringIndexOf {
         System.out.println(a.contains(b));*/
 
 
-        Person person = new Person();
+        /*Person person = new Person();
         person.setAge(1);
         person.setName("王五");
         List<Person> list = new ArrayList<>();
@@ -63,6 +62,6 @@ public class StringIndexOf {
 
         if (list.stream().anyMatch(person3 -> StringUtils.isBlank(person3.getName()) && person3.getAge() == null)) {
             System.out.println("aaa");
-        };
+        };*/
     }
 }

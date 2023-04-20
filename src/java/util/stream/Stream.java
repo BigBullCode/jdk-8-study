@@ -952,7 +952,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
      * @throws NullPointerException if the element selected is null
      * @see #findFirst()
      */
-    Optional<T> findAny();
+    Optional<T> findAny(); //增强了并发能力,但返回值不确定,随即返回一个符合条件的值.
 
     // Static factories
 

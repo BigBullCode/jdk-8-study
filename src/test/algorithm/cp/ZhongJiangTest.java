@@ -12,6 +12,8 @@ import java.util.List;
 public class ZhongJiangTest {
 
     public static void main(String[] args) {
+
+
         List<Integer> targetList = new ArrayList<>();
 //        targetList.addAll(Arrays.asList(new Integer[]{5,10,11,13,27,28,9}));
 //        targetList.addAll(Arrays.asList(new Integer[]{9,14,20,21,24,26,4}));
@@ -23,8 +25,11 @@ public class ZhongJiangTest {
 //        targetList.addAll(Arrays.asList(new Integer[]{3,6,9,15,22,31,2})); //20220113
 //        targetList.addAll(Arrays.asList(new Integer[]{1,20,22,23,25,28,16})); //20220116
 //        targetList.addAll(Arrays.asList(new Integer[]{2,3,7,9,20,21,13})); //20220118
-//        targetList.addAll(Arrays.asList(new Integer[]{4,5,17,19,25,28,16})); //20220123
-        targetList.addAll(Arrays.asList(new Integer[]{12,18,19,20,21,32,15})); //20220120
+//        targetList.addAll(Arrays.asList(new Integer[]{4,5,17,19,25,28,16})); //20220120
+//        targetList.addAll(Arrays.asList(new Integer[]{12,18,19,20,21,32,15})); //20220123
+//        targetList.addAll(Arrays.asList(new Integer[]{6,15,23,24,25,33,15})); //20220125
+//        targetList.addAll(Arrays.asList(new Integer[]{4,7,8,29,30,31,1})); //20220127
+        targetList.addAll(Arrays.asList(new Integer[]{2,3,4,7,10,18,15})); //20220208
 
         List<List<Integer>> list = new ArrayList<>();
         String fileName = "F:\\testFile\\cp.txt";
@@ -34,7 +39,7 @@ public class ZhongJiangTest {
 
         System.out.println("\n计算已购买彩票中奖情况========");
         List<List<Integer>> choiceList = new ArrayList<>();
-        String choiceName = "F:\\testFile\\cp-2022-01-21.txt";
+        String choiceName = "F:\\testFile\\cp-2022-02-08.txt";
         getList(choiceName, choiceList);
         getMoney(targetList, choiceList);
     }

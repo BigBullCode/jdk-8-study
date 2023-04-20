@@ -253,6 +253,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
     }
 
     public void run() {
+        //校验任务状态
         if (state != NEW ||
             !UNSAFE.compareAndSwapObject(this, runnerOffset,
                                          null, Thread.currentThread()))
