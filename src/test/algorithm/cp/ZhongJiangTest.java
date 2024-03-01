@@ -29,17 +29,18 @@ public class ZhongJiangTest {
 //        targetList.addAll(Arrays.asList(new Integer[]{12,18,19,20,21,32,15})); //20220123
 //        targetList.addAll(Arrays.asList(new Integer[]{6,15,23,24,25,33,15})); //20220125
 //        targetList.addAll(Arrays.asList(new Integer[]{4,7,8,29,30,31,1})); //20220127
-        targetList.addAll(Arrays.asList(new Integer[]{2,3,4,7,10,18,15})); //20220208
+//        targetList.addAll(Arrays.asList(new Integer[]{2,3,4,7,10,18,15})); //20220208
+        targetList.addAll(Arrays.asList(new Integer[]{6,8,17,25,26,28,3})); //20220208
 
         List<List<Integer>> list = new ArrayList<>();
-        String fileName = "F:\\testFile\\cp.txt";
+        String fileName = "F:\\testFile\\cp-20230425173748.txt";
         getList(fileName, list);
         getMoney(targetList, list);
 //        System.out.println("组合数量：" + list.size());
 
         System.out.println("\n计算已购买彩票中奖情况========");
         List<List<Integer>> choiceList = new ArrayList<>();
-        String choiceName = "F:\\testFile\\cp-2022-02-08.txt";
+        String choiceName = "F:\\testFile\\cp-20230425173748-50.txt";
         getList(choiceName, choiceList);
         getMoney(targetList, choiceList);
     }

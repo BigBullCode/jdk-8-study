@@ -1,6 +1,8 @@
 package test.algorithm.cp;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -25,17 +27,19 @@ import java.util.stream.Collectors;
 public class CPTest {
 
     static final Integer conNum = 3; //连续数字个数
-    static final Integer HIGH_RATE_RED = 1; //高频红球标准，出现2次以上
-    static final Integer LIKE = 3; //与最近号码相似度，匹配2个以上过滤
-    static final Integer BLUE_RE = 3; //出现次数以上的蓝球过滤
+    static final Integer HIGH_RATE_RED = 1; //高频红球标准，出现n次以上
+    static final Integer LIKE = 3; //与最近号码相似度，匹配n个以上过滤
+    static final Integer BLUE_RE = 3; //出现n次数以上的蓝球过滤
     static Integer UP_BLUE; //出现次数以上的蓝球过滤
+
+    static Integer CHIOCE_NUM = 50; //取出样本量
     static List<List<Integer>> lists = new LinkedList<>();
     static Map<Integer, Integer> blueMap = new HashMap<>();
     static Set<Integer> blues = new HashSet<>();
 //    static List<Integer> list = new ArrayList<>();
 
     static {
-        Collections.addAll(lists
+       /* Collections.addAll(lists
                 ,new ArrayList<>(Arrays.asList(new Integer[]{6,19,24,25,28,32,4})) //
                 ,new ArrayList<>(Arrays.asList(new Integer[]{7,9,10,14,19,24,15})) //
                 ,new ArrayList<>(Arrays.asList(new Integer[]{1,7,11,15,17,19,6})) //
@@ -82,7 +86,13 @@ public class CPTest {
 //                ,new ArrayList<>(Arrays.asList(new Integer[]{4,15,21,27,28,29,10}))
 //                ,new ArrayList<>(Arrays.asList(new Integer[]{5,17,20,21,23,33,4}))
 //                ,Arrays.asList(new Integer[]{7,15,16,20,27,29,7})
-                );
+                );*/
+        /*SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String today = simpleDateFormat.format(new Date());*/
+        String historyFilePath = "F:\\\\testFile\\\\cpHistory-2023-04-25.txt";
+        List<List<Integer>> cpHistoryList = parseCPHistoryFile(historyFilePath);
+        lists = cpHistoryList.subList(0, 20);
+
         boolean filter = false; //最近一个篮球是否要过滤
         for (int i = 0; i < lists.size(); i++) {
             List<Integer> ints = lists.get(i);
@@ -116,32 +126,66 @@ public class CPTest {
             }
         }
         System.out.println("高频篮球：" + blues);
-//        blues.addAll(Arrays.asList(new Integer[]{1,2,3,4,5,6,7,8,9,10}));
-//        list.addAll(Arrays.asList(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));  //高频率红球
     }
 
+    private static List<List<Integer>> parseCPHistoryFile(String path) {
+        List<List<Integer>> datas = new LinkedList<>();
 
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new FileReader(
+                    path));
+            String line = reader.readLine();
+            while (line != null) {
+//                System.out.println(line);
+                String number = line.replace("[", "").replace("]", "").replace(" ", "");
+                List<Integer> lineData = new ArrayList<>();
+                String[] lineStr = number.split(",");
+                for (String s : lineStr) {
+                    lineData.add(Integer.valueOf(s));
+                }
+                datas.add(lineData);
+                // read next line
+                line = reader.readLine();
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return datas;
+    }
 
     public static void main(String[] args) {
+        //解析近期彩票及预测
+//        parseCPHistoryAndYC();
+        //获取过滤后的红球组合
+        List<List<Integer>> redList = getRedList(Arrays.asList(new Integer[]{2, 5, 9, 12, 19, 20, 23}));
+        System.out.println(redList.size());
+    }
+    /**
+     * //解析近期彩票及预测
+     */
+    private static void parseCPHistoryAndYC() {
         List<Integer> rateReds = getHighRateReds();
         System.out.println("高频红球：" + rateReds);
         List<List<Integer>> reds = getRedList(rateReds);
         System.out.println("红球组合数量：" + reds.size());
         List<List<Integer>> targets = getTargetList(reds);
         System.out.println("红蓝球组合数量：" + targets.size());
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd");
 
-        String filePath = "F:\\testFile\\cp.txt";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+        String today = simpleDateFormat.format(new Date());
+        String filePath = "F:\\testFile\\cp-" + today + ".txt";
         exportToFile(targets, filePath); //号码集合保存到本地
-        System.out.println("随机选择15注:");
+        System.out.println("随机选择"+ CHIOCE_NUM +"注:");
         List<List<Integer>> choiceNums = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < CHIOCE_NUM; i++) {
             List<Integer> ints = targets.get((int) (Math.random() * targets.size()));
             choiceNums.add(ints);
         }
-        String today = simpleDateFormat.format(new Date());
-        String choiceFilePath = "F:\\\\testFile\\\\cp-" + today + ".txt";
-        exportToFile1(choiceNums, choiceFilePath);
+
+        String choiceFilePath = "F:\\\\testFile\\\\cp-" + today + "-" + CHIOCE_NUM + ".txt";
+        exportToFile(choiceNums, choiceFilePath);
         for (List<Integer> choiceNum : choiceNums) {
             Integer blue = choiceNum.get(6);
             choiceNum.remove(6);
@@ -160,6 +204,7 @@ public class CPTest {
                 writer.write(Arrays.toString(target.toArray()));
                 writer.close();
             }
+            System.out.println("样本导出成功");
         } catch (IOException e) {
             e.printStackTrace();
         }
